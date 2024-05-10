@@ -1,15 +1,14 @@
 import { Text, View, ScrollView, SafeAreaView, Dimensions } from "react-native";
-import { Link } from "expo-router";
 import EStyleSheet from "react-native-extended-stylesheet";
-
-const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
+import { Link } from "expo-router";
 
 EStyleSheet.build();
 
+const windowWidth = Dimensions.get("window").width;
+
 export function Day({ id }) {
   return (
-    <Link href={"day/" + id} style={styles.cardLink}>
+    <Link href={"day/" + id} style={{ margin: 10 }}>
       <View style={styles.card}>
         <Text>{id}</Text>
       </View>
@@ -20,10 +19,7 @@ export function Day({ id }) {
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView
-        style={styles.scroll}
-        contentContainerStyle={styles.container}
-      >
+      <ScrollView style={{ width: "100%" }} contentContainerStyle={styles.container}>
         <Day id={"Monday"}></Day>
         <Day id={"Tuesday"}></Day>
         <Day id={"Wednesday"}></Day>
@@ -38,19 +34,11 @@ const styles = EStyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
     justifyContent: "space-evenly",
-  },
-  scroll: {
-    width: "100%",
-  },
-
-  cardLink: {
-    margin: 10,
   },
 
   card: {
-    backgroundColor: "#f4511e",
+    backgroundColor: "#ffffff",
     width: windowWidth * 0.8,
     height: 100,
     justifyContent: "center",

@@ -6,13 +6,18 @@ export default function Layout() {
     <Stack
       screenOptions={{
         headerStyle: {
-          backgroundColor: "#f4511e",
-        },
-        headerTintColor: "#fff",
-        headerTitleStyle: {
-          fontWeight: "bold",
+          backgroundColor: "#ffffff",
         },
       }}
-    ></Stack>
+    >
+      <Stack.Screen
+        name="(drawer)"
+        options={{
+          title: "Back",
+          headerShown: false,
+          headerStyle: { backgroundColor: "#ffffff" },
+        }}
+      />
+    </Stack>
   );
 }
